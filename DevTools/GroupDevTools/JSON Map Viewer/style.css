@@ -1,0 +1,171 @@
+:root {
+    --bg-main: #f4f4f9;
+    --bg-panel: #ffffff;
+    --color-text: #333333;
+    --color-header-footer: #1e293b;
+    --color-border: #cbd5e1;
+    
+    /* JSON Syntax Colors */
+    --json-key: #881391;
+    --json-string: #22863a;
+    --json-number: #005cc5;
+    --json-boolean: #d73a49;
+    --json-null: #6a737d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: var(--color-header-footer);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+footer p {
+    font-size: 0.875rem;
+}
+
+/* Mobile First Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: var(--bg-panel);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    min-height: 40vh;
+}
+
+.panel-header {
+    background-color: #f1f5f9;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-border);
+    color: #475569;
+}
+
+/* New styles for the output header and button */
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #e2e8f0;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#json-input {
+    flex: 1;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    font-family: monospace;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+}
+
+.viewer {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Desktop override */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+    .panel {
+        min-height: auto;
+        width: 50%;
+    }
+}
+
+/* JSON Tree Styles */
+.json-key { color: var(--json-key); font-weight: bold; }
+.json-string { color: var(--json-string); }
+.json-number { color: var(--json-number); }
+.json-boolean { color: var(--json-boolean); font-weight: bold; }
+.json-null { color: var(--json-null); font-style: italic; }
+
+details {
+    margin-left: 0.5rem;
+}
+
+.json-children {
+    margin-left: 1.25rem;
+    border-left: 1px dashed #e2e8f0;
+    padding-left: 0.5rem;
+}
+
+summary {
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+summary:hover {
+    background-color: #f8fafc;
+    border-radius: 4px;
+}
+
+.error-msg {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.placeholder-msg {
+    color: #94a3b8;
+    font-style: italic;
+}

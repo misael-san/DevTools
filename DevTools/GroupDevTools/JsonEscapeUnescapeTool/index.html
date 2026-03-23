@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape/Unescape JSON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Escape/Unescape Json</h1>
+    </header>
+
+    <main class="main-container">
+        <div class="app-content">
+            <div class="textarea-group">
+                <textarea id="json-input" class="json-textarea" placeholder="Please make sure that the JSON was validated"></textarea>
+            </div>
+
+            <div class="actions-bar">
+                <button id="escape-btn" class="btn btn-primary">Escape JSON</button>
+                <button id="unescape-btn" class="btn btn-secondary">Unescape JSON</button>
+                <button id="clear-btn" class="btn btn-warning">Clear</button>
+            </div>
+
+            <div class="textarea-group">
+                <textarea id="json-output" class="json-textarea" readonly></textarea>
+                 <div class="output-bar">
+                    <button id="copy-btn" class="btn btn-copy">Copy</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Developed by Misael Jafet Perez Carcache 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HP Dynamic Banner Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>HP Dynamic Banner Builder</h1>
+    </header>
+    <main>
+        <section class="banner-container">
+            
+            <!-- Position 1 (Full Width) -->
+            <div class="position-input full-width" data-pos="1">
+                <label for="pos1">Position 1</label>
+                <textarea id="pos1" placeholder="If you don't enter a value default will be applied"></textarea>
+            </div>
+
+            <!-- Position 2 (1/3 Width) -->
+            <div class="position-input third-width" data-pos="2">
+                <label for="pos2">Position 2</label>
+                <textarea id="pos2" placeholder="If you don't enter a value default will be applied"></textarea>
+            </div>
+
+            <!-- Position 3 (1/3 Width) -->
+            <div class="position-input third-width" data-pos="3">
+                <label for="pos3">Position 3</label>
+                <textarea id="pos3" placeholder="If you don't enter a value default will be applied"></textarea>
+            </div>
+
+            <!-- Position 4 (1/3 Width) -->
+            <div class="position-input third-width" data-pos="4">
+                <label for="pos4">Position 4</label>
+                <textarea id="pos4" placeholder="If you don't enter a value default will be applied"></textarea>
+            </div>
+
+            <!-- Position 5 (Full Width) -->
+            <div class="position-input full-width" data-pos="5">
+                <label for="pos5">Position 5</label>
+                <textarea id="pos5" placeholder="If you don't enter a value default will be applied"></textarea>
+            </div>
+
+            <!-- Position 6 (Full Width) -->
+            <div class="position-input full-width" data-pos="6">
+                <label for="pos6">Position 6</label>
+                <textarea id="pos6" placeholder="If you don't enter a value default will be applied"></textarea>
+            </div>
+
+            <!-- Position 7 (Full Width) -->
+            <div class="position-input full-width" data-pos="7">
+                <label for="pos7">Position 7</label>
+                <textarea id="pos7" placeholder="If you don't enter a value default will be applied"></textarea>
+            </div>
+            
+            <button id="generateButton">Generate Template</button>
+        </section>
+        
+        <section class="result-container">
+            <button id="copyButton">Copy</button>
+            <textarea id="resultOutput" readonly></textarea>
+        </section>
+    </main>
+    <footer>
+        <p>Developed By Misael Jafet Perez Carcache 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

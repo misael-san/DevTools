@@ -1,0 +1,128 @@
+/* =========================================
+   Reset and Base Variables
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* 1rem = 16px */
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f4f5f7; /* Very light gray for contrast */
+    color: #1a1a1a; /* Dark gray/almost black for WCAG compliant text contrast */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   Typography & Layout Components
+   ========================================= */
+.header {
+    background-color: #2c3136; /* Sober dark gray */
+    color: #ffffff;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    max-width: 64rem; /* ~1024px maximum width */
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+/* Mobile First Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+}
+
+/* =========================================
+   Card Design (Links)
+   ========================================= */
+.tool-card {
+    background-color: #ffffff;
+    border: 0.0625rem solid #e2e4e8;
+    border-radius: 0.75rem;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.tool-card:hover,
+.tool-card:focus {
+    /* Changes color and elevates slightly on hover */
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    transform: translateY(-0.25rem);
+    outline: none;
+}
+
+.tool-icon {
+    width: 4rem; /* Consistent size for all SVG icons */
+    height: 4rem;
+    margin-bottom: 1.25rem;
+    object-fit: contain;
+    /* Ensuring grey SVGs don't clash, they stand well on white/grey backgrounds */
+}
+
+.tool-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.tool-year {
+    font-size: 0.875rem;
+    color: #5a6268; /* Readable dark grey, compliant contrast on white/light grey */
+    font-weight: 500;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+.footer {
+    background-color: #2c3136;
+    color: #e2e4e8;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.875rem;
+    margin-top: auto;
+}
+
+/* =========================================
+   Media Queries (Desktop Scale)
+   ========================================= */
+@media (min-width: 48rem) { /* 768px and up */
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+        gap: 2rem;
+    }
+    
+    .header h1 {
+        font-size: 2.25rem;
+    }
+}

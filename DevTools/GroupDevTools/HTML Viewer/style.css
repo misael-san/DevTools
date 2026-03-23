@@ -1,0 +1,127 @@
+/* Basic Reset and Full Page Setup */
+body, html {
+    margin: 0; /* Remove default browser margins */
+    padding: 0; /* Remove default browser padding */
+    height: 100%; /* Make html and body take the full viewport height */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern sans-serif font stack */
+    overflow: hidden; /* Prevent scrollbars on the body, as panes will handle their own scrolling */
+    display: flex; /* Use flexbox for overall page layout (header, main, footer) */
+    flex-direction: column; /* Stack header, main, and footer vertically */
+}
+
+/* Header Styling */
+header {
+    background-color: #f0f0f0; /* Light gray background for the header */
+    padding: 0; /* Remove padding, will use flex to center */
+    text-align: center; /* Center the text content (h1) */
+    border-bottom: 1px solid #ccc; /* Subtle border below the header */
+    flex-shrink: 0; /* Prevent the header from shrinking if content is too large */
+    height: 40px; /* Explicit height for the header */
+    display: flex; /* Use flex to center content vertically */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+header h1 {
+    margin: 0; /* Remove default h1 margin */
+    font-size: 1.5em; /* Set font size for the main title */
+    font-weight: 500; /* Slightly lighter font weight */
+}
+
+/* Main container for input and output panes */
+.container {
+    display: flex; /* Arrange child elements (panes and resizer) in a row */
+    flex-grow: 1; /* Allow the container to take up all available vertical space */
+    /* Calculate height: 100% of parent (body) minus header and footer heights */
+    height: calc(100% - 40px - 40px); /* Header height 40px, Footer height 40px (padding 10*2 + implicit p margin or line height) */
+    overflow: hidden; /* Prevent content from overflowing the main container itself */
+}
+
+/* Common styling for Panes (input and output) */
+.pane {
+    height: 100%; /* Panes should take the full height of their container */
+    overflow: auto; /* Add scrollbars if content exceeds pane dimensions */
+    display: flex; /* Use flexbox for internal layout (e.g., output pane with info and iframe) */
+    flex-direction: column; /* Stack elements vertically within a pane */
+}
+
+/* Input Pane Specifics */
+#input-pane {
+    flex: 1; /* Distribute available width. Initially, 1 part for input. */
+    background-color: #f9f9f9; /* Light background for the input pane */
+}
+
+/* Output Pane Specifics */
+#output-pane {
+    flex: 1; /* Distribute available width. Initially, 1 part for output. */
+    background-color: #ffffff; /* White background for the output pane */
+    position: relative; /* Needed if child elements use absolute positioning (not used here, but good practice) */
+}
+
+/* HTML input textarea */
+#html-input {
+    width: 100%; /* Textarea takes full width of its parent (#input-pane) */
+    height: 100%; /* Textarea takes full height of its parent (#input-pane) */
+    border: none; /* Remove default border */
+    padding: 15px; /* Internal spacing */
+    font-family: 'Consolas', 'Monaco', 'Courier New', Courier, monospace; /* Monospaced font for code */
+    font-size: 14px; /* Comfortable font size for code */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    resize: none; /* Disable browser's default textarea resize handle */
+    background-color: #ffffff; /* Light theme: white background for textarea */
+    color: #333333; /* Light theme: dark text color */
+    outline: none; /* Remove focus outline (consider accessibility for custom focus styles if needed) */
+    line-height: 1.5; /* Improve readability of code */
+}
+
+/* Resizer Handle Styling */
+.resizer {
+    width: 10px; /* Width of the draggable resizer bar */
+    background-color: #cccccc; /* Medium gray background */
+    cursor: col-resize; /* Indicate that this element can be dragged horizontally */
+    flex-shrink: 0; /* Prevent the resizer from shrinking */
+    height: 100%; /* Resizer takes full height of the container */
+    display: flex; /* For potential future icons or elements inside */
+    align-items: center; /* Vertically center content (if any) */
+    justify-content: center; /* Horizontally center content (if any) */
+    transition: background-color 0.2s ease; /* Smooth background color transition on hover */
+}
+.resizer:hover {
+    background-color: #bbbbbb; /* Darker gray on hover for visual feedback */
+}
+
+
+/* Viewport information display (above the output iframe) */
+.viewport-info {
+    background-color: #e9e9e9; /* Light gray background for info bar */
+    padding: 8px 12px; /* Spacing around the text */
+    font-size: 0.85em; /* Slightly smaller font size */
+    text-align: right; /* Align text to the right */
+    border-bottom: 1px solid #dddddd; /* Subtle border below the info bar */
+    flex-shrink: 0; /* Prevent this div from shrinking when iframe content is large */
+    color: #333; /* Dark text color for readability */
+}
+
+/* Output iframe (where the HTML result is shown) */
+#output-frame {
+    width: 100%; /* Iframe takes full width of its parent (#output-pane) */
+    flex-grow: 1; /* Iframe takes up remaining vertical space in #output-pane */
+    border: none; /* Remove default iframe border */
+    background-color: white; /* Ensure iframe background is white */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333333; /* Dark background for the footer */
+    color: #f0f0f0; /* Light text color for contrast */
+    text-align: center; /* Center the paragraph text within the footer */
+    padding: 10px 0; /* Vertical padding, no horizontal padding as text-align handles centering */
+    font-size: 0.9em; /* Slightly smaller font for footer text */
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+    height: 20px; /* Explicit height for footer (used in .container height calc) */
+    line-height: 20px; /* Vertically center text if footer height matches line-height */
+}
+
+footer p {
+    margin: 0; /* Remove default paragraph margins to avoid extra space */
+}

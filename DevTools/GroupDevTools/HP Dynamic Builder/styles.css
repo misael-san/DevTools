@@ -1,0 +1,158 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Main Layout */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Form Grid System - Mobile First (Columnas por defecto) */
+.banner-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espacio entre cajas */
+}
+
+.position-input {
+    width: 100%; /* Mobile: Ocupa todo el ancho */
+    background: #fff;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Labels */
+.position-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+/* Textareas */
+.position-input textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    resize: vertical;
+    color: #555;
+    background-color: #fff;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.position-input textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0,123,255,0.2);
+}
+
+.position-input textarea::placeholder {
+    color: #999;
+    text-align: center;
+    line-height: 50px; /* Centrar verticalmente el placeholder */
+}
+
+/* Desktop Layout (Estilo tipo Dashboard como la imagen) */
+@media (min-width: 1024px) {
+    /* Clase para filas completas (Pos 1, 5, 6, 7) */
+    .full-width {
+        flex: 0 0 100%;
+    }
+
+    /* Clase para 3 columnas (Pos 2, 3, 4) */
+    .third-width {
+        /* (100% - 30px de gap total) / 3 */
+        flex: 0 0 calc(33.333% - 10px); 
+    }
+}
+
+/* Botones Generales */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+#generateButton {
+    background-color: #007bff; /* Azul */
+}
+
+#generateButton:hover {
+    background-color: #0056b3;
+}
+
+/* Result Area */
+.result-container {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+#copyButton {
+    background-color: #28a745; /* Verde */
+    margin-bottom: 10px;
+}
+
+#copyButton:hover {
+    background-color: #218838;
+}
+
+#resultOutput {
+    width: 100%;
+    height: 400px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85rem;
+    white-space: pre; /* Respeta formato exacto */
+    overflow: auto;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+    font-size: 0.9rem;
+}

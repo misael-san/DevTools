@@ -1,0 +1,191 @@
+/*
+    --- GLOBAL RULES & MOBILE FIRST ---
+*/
+
+/* Set the base rule for REM units.
+   The default browser font-size is 16px.
+   62.5% of 16px is 10px.
+   This allows for easy conversion: 1rem = 10px, 1.6rem = 16px, etc.
+*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+/*
+   Inherit box-sizing for all elements for more intuitive sizing.
+   Padding and border will no longer add to the total width or height of an element.
+*/
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*
+   Base styles for the document body.
+   - Use a standard, readable sans-serif font.
+   - Set the base font-size to 1.6rem (equivalent to 16px).
+   - line-height improves text legibility.
+   - display: flex and flex-direction: column create a main column layout.
+   - min-height: 100vh ensures the body takes up at least the full screen height.
+*/
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* The main container will use flex-grow: 1 to occupy all available
+   vertical space between the header and footer.
+   Flexbox is used to center and organize the content.
+*/
+.main-container {
+    width: 100%;
+    max-width: 80rem; /* 800px */
+    margin: 0 auto;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+    --- HEADER AND FOOTER STYLES ---
+*/
+.header, .footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1.5rem;
+    flex-shrink: 0; /* Prevents them from shrinking */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+/*
+    --- TEXTAREA AND CONTROLS STYLES ---
+*/
+
+/* Container to group the textareas and buttons.
+   Organizes child elements in a column.
+   The gap adds consistent spacing between elements.
+*/
+.app-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between input, buttons, and output */
+    flex-grow: 1; /* Allows this container to grow */
+}
+
+.textarea-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1; /* Allows this group to grow and take up space */
+}
+
+/* Common styles for the input and output text boxes.
+   - width: 100% to fill the container's width.
+   - min-height ensures a usable minimum size, but they can grow.
+   - resize: vertical allows the user to adjust the height.
+   - A monospaced font is used for better code visualization.
+   - Border and padding for a better appearance.
+*/
+.json-textarea {
+    width: 100%;
+    min-height: 20rem; /* Initial minimum height of 200px */
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.8rem;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.6rem;
+    resize: vertical;
+    flex-grow: 1; /* Ensures the textareas take up available space */
+}
+
+/* Container for the action buttons.
+   Uses flexbox to align the buttons.
+   flex-wrap: wrap allows the buttons to rearrange on small screens.
+*/
+.actions-bar, .output-bar {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.output-bar {
+    justify-content: flex-end; /* Aligns the copy button to the right */
+}
+
+/*
+   Base styles for the buttons.
+   - Clean and modern appearance.
+   - Smooth transitions for hover and active states.
+   - cursor: pointer indicates they are clickable elements.
+   - REM units for padding and font-size for scalability.
+*/
+.btn {
+    padding: 1.2rem 2.4rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:active {
+    transform: scale(0.98); /* Click effect */
+}
+
+/* Specific colors for each button type */
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.btn-copy {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-warning {
+    background-color: #e74c3c;
+    color: white;
+    margin-left: auto; /* Pushes the clear button to the right */
+}
+
+/*
+    --- RESPONSIVE DESIGN ---
+    Although the design is mobile-first and works well on all screens,
+    a media query can be added for adjustments on larger screens if needed.
+    For example, we could increase the base font size or spacing.
+*/
+@media (min-width: 768px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,84 @@
+/* Basic Reset and Page Setup */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack header, main, footer vertically */
+    background-color: #f4f4f4; /* Light gray background for the page */
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #333; /* Dark background for header */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    flex-shrink: 0; /* Header should not shrink */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* Main container for the two panels */
+.container {
+    display: flex; /* Arrange panels side-by-side */
+    flex-grow: 1; /* Container takes available vertical space */
+    padding: 20px;
+    gap: 20px; /* Space between the two panels */
+    overflow: hidden; /* Prevent container itself from scrolling */
+}
+
+/* Styling for each panel (Decoded and Encoded) */
+.panel {
+    flex: 1; /* Each panel takes equal width */
+    display: flex;
+    flex-direction: column; /* Stack h2 and textarea vertically */
+    background-color: #fff; /* White background for panels */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensure textarea stays within rounded corners */
+}
+
+.panel h2 {
+    margin: 0;
+    padding: 15px;
+    background-color: #e9e9e9; /* Light header for panel title */
+    font-size: 1.1em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Textarea styling */
+textarea {
+    flex-grow: 1; /* Textarea fills the available space in its panel */
+    padding: 15px;
+    border: none; /* Remove default border */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for code/entities */
+    font-size: 14px;
+    line-height: 1.6;
+    resize: none; /* Disable user resizing of textareas */
+    outline: none; /* Remove focus outline */
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff; /* Ensure textarea background is white */
+    color: #333;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: white;
+    text-align: center; /* Center the paragraph text */
+    padding: 15px 0;
+    font-size: 0.9em;
+    flex-shrink: 0; /* Footer should not shrink */
+}
+
+footer p {
+    margin: 0; /* Remove default paragraph margin */
+}

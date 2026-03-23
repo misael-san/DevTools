@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Validator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="lib/jsonlint.min-1.6.0.js"></script>
+</head>
+<body>
+  <h1>JSON VALIDATOR</h1>
+  <div class="container">
+    <div class="editor-group">
+      <div class="editor-wrapper">
+        <div class="line-numbers" id="lineNumbers"></div>
+        <textarea id="jsonInput" placeholder='Example: {"name": "Misael", "age": 27}'></textarea>
+      </div>
+    </div>
+    <div class="button-group">
+      <button id="validateButton" onclick="validateJson()">Validate JSON</button>
+      <button id="clearButton" onclick="clearInput()">Clear</button>
+      <button id="formatButton" onclick="toggleFormat()" data-mode="prettify">Prettify</button>
+      <button id="copyButton" onclick="copyResult()">Copy JSON</button>
+    </div>
+    <div class="result-group">
+      <div id="errorOutput"></div>
+    </div>
+  </div>
+  <div class="footer">Developed by Misael Jafet Perez Carcache 2025</div>
+  <script src="script.js"></script>
+</body>
+</html>

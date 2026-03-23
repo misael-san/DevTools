@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Map Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>JSON Map Viewer</h1>
+    </header>
+
+    <main class="container">
+        <!-- Left Panel: Input -->
+        <section class="panel">
+            <div class="panel-header">JSON Input</div>
+            <textarea id="json-input" placeholder="Paste your JSON data here..."></textarea>
+        </section>
+
+        <!-- Right Panel: Output -->
+        <section class="panel">
+            <div class="panel-header output-header">
+                <span>Mapped Output</span>
+                <button id="toggle-tree" class="btn" disabled>Collapse All</button>
+            </div>
+            <div id="json-output" class="viewer">
+                <span class="placeholder-msg">Waiting for valid JSON...</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed by Misael Jafet Perez Carcache 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
